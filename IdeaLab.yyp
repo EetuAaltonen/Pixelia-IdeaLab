@@ -143,6 +143,14 @@
             }
         },
         {
+            "Key": "c4011ed6-7001-4e62-be31-09988120b822",
+            "Value": {
+                "id": "e2597d20-ffef-4133-859b-bc9ea26183de",
+                "resourcePath": "scripts\\scr_minigame_minig_point_checks\\scr_minigame_minig_point_checks.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "3f672ce0-d0b8-494e-98ff-4444773d89cd",
@@ -208,7 +216,7 @@
         }
     ],
     "script_order": [
-        
+        "c4011ed6-7001-4e62-be31-09988120b822"
     ],
     "tutorial": ""
 }

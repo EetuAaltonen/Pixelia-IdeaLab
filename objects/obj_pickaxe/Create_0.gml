@@ -5,29 +5,26 @@ acceleration = 5;
 canMove = true;
 
 //Points
-pointRadius = 5;
+var startPoint = 80;
+var pointMargin = 10;
+pointRadius = 8;
 yLimit = 500;
+doneCount = 0;
 
 points = ds_list_create();
 var tempPoints = [
-	[100, 400],
-	[110, 390],
-	[120, 380],
-	[130, 370],
-	[140, 360],
-	[150, 350],
-	[160, 350],
-	[170, 350],
-	[180, 340],
-	[190, 330],
-	[200, 320],
-	[210, 310],
-	[220, 300],
-	[230, 290]
+	yLimit, 490, 480, 470,
+	460, 450, 440, 430,
+	420, 410, 400, 390, 380,
+	370, 360, 350, 350,
+	350, 340, 330, 320,
+	310, 300, 290, yLimit
 ];
 
 var i;
 var arrayLength = array_length_1d(tempPoints);
 for (i = 0; i < arrayLength; i++) {
-	ds_list_add(points, tempPoints[i]);	
+	ds_list_add(points, [startPoint + (pointMargin*(i+1)), tempPoints[i]]);	
 }
+
+scr_minigame_minig_point_checks(points);
