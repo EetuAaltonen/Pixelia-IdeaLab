@@ -15,6 +15,7 @@ while(requestLoop) {
 		if (point[1] < yLimit) {
 			pointPrev = ds_list_find_value(points, i-1);
 			pointNext = ds_list_find_value(points, i+1);
+
 			//Horizontal distance to neighbour points
 			/*if (point[0] - pointNext[0] > pointRadius*2 /*|| pointPrev[0] - point[0] > pointRadius*2*//*) {
 				point[1] = yLimit-pointRadius;
@@ -29,7 +30,7 @@ while(requestLoop) {
 				//requestLoop = true;
 			}*/
 			//if (point_distance(point[0], point[1], pointNext[0], pointNext[1]) > (pointRadius*4)) {
-				if (pointNext[1] < point[1] && abs(point[1]-pointNext[1]) > abs(point[1]-pointPrev[1])) {
+				/* <--- if (pointNext[1] < point[1] && abs(point[1]-pointNext[1]) > abs(point[1]-pointPrev[1])) {
 					pointNext[1] += (abs(point[1]-pointNext[1]) - abs(point[1]-pointPrev[1]))
 					ds_list_set(points, i+1, pointNext);
 					//requestLoop = true;

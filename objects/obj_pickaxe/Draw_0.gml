@@ -15,9 +15,10 @@ for (i = 0; i < pointCount; i++) {
 	} else if (i == pointCount - 1) {
 		lineX2 = point[0];
 	}
-	//draw_circle_color(point[0], point[1], /*pointLineWidth+1*/pointRadius, c_red, c_red, false);
+	draw_circle_color(point[0], point[1], pointLineWidth+0.5/*pointRadius*/, c_red, c_red, false);
 	if (i+1 < pointCount) {
 		tempPoint = ds_list_find_value(points, i+1);
+		draw_rectangle_color(point[0], point[1], tempPoint[0], yLimit, c_gray, c_gray, c_gray, c_gray, false);
 		draw_line_width_color(point[0], point[1], tempPoint[0], tempPoint[1], pointLineWidth, c_yellow, c_yellow);
 	}
 }

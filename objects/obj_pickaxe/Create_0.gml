@@ -1,13 +1,13 @@
 //Self
 image_speed = 0;
 maxSpeed = 80;
-acceleration = 5;
+acceleration = 10;
 canMove = true;
 
 //Points
 var startPoint = 80;
 var pointMargin = 10;
-pointRadius = 8;
+pointRadius = 10;
 yLimit = 500;
 doneCount = 0;
 
