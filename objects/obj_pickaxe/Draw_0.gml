@@ -2,8 +2,8 @@ draw_self();
 
 var i;
 var point;
-var tempPoint;
-var pointLineWidth = 5;
+var prevPoint;
+var lineWidth = 4;
 var pointCount = ds_list_size(points); //array_length_1d(points);
 var lineX1 = 0;
 var lineX2 = 0;
@@ -15,12 +15,22 @@ for (i = 0; i < pointCount; i++) {
 	} else if (i == pointCount - 1) {
 		lineX2 = point[0];
 	}
-	draw_circle_color(point[0], point[1], pointLineWidth+0.5/*pointRadius*/, c_red, c_red, false);
-	if (i+1 < pointCount) {
-		tempPoint = ds_list_find_value(points, i+1);
-		draw_rectangle_color(point[0], point[1], tempPoint[0], yLimit, c_gray, c_gray, c_gray, c_gray, false);
-		draw_line_width_color(point[0], point[1], tempPoint[0], tempPoint[1], pointLineWidth, c_yellow, c_yellow);
+	if (i > 0) {	
+		prevPoint = ds_list_find_value(points, i-1);
+		draw_line_width_color(prevPoint[0], prevPoint[1], point[0], point[1], lineWidth, c_yellow, c_yellow);
+		if (prevPoint[1] > point[1]) {
+			draw_triangle_color(prevPoint[0], prevPoint[1], point[0], point[1],
+			point[0], prevPoint[1], c_gray, c_gray, c_gray, false);
+			draw_rectangle_color(prevPoint[0], prevPoint[1], point[0], yLimit,
+			c_gray, c_gray, c_gray, c_gray, false);
+		} else {
+			draw_triangle_color(prevPoint[0], prevPoint[1], point[0], point[1],
+			prevPoint[0], point[1], c_gray, c_gray, c_gray, false);
+			draw_rectangle_color(prevPoint[0], point[1], point[0], yLimit,
+			c_gray, c_gray, c_gray, c_gray, false);
+		}
 	}
+	draw_circle_color(point[0], point[1], lineWidth+1, c_red, c_red, false);
 }
 
 var lineMargin = 50;

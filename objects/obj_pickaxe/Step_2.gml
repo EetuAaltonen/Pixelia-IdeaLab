@@ -45,32 +45,6 @@ if (canMove) {
 							}
 						}
 					}
-					
-					/*if (i-1 > 0) {
-						pointPrev = ds_list_find_value(points, i-1);
-						if (pointPrev[1] < yLimit && pointPrev[1] < point[1]) {
-							if (point_distance(point[0], point[1], pointPrev[0], pointPrev[1]) > maxPointDistance) {
-								pointPrev[1] += ((point[1] - pointPrev[1]) - maxPointDistance);
-							}
-							if (pointPrev[1] > yLimit) {
-								pointPrev[1] = yLimit;
-							}
-							ds_list_set(points, i-1, pointPrev);
-						}
-					}
-					if (i+1 < pointCount) {
-						pointNext = ds_list_find_value(points, i+1);
-						if (pointNext[1] < yLimit && pointNext[1] < point[1]) {
-							if (point_distance(point[0], point[1], pointNext[0], pointNext[1]) > maxPointDistance) {
-								pointNext[1] += ((point[1] - pointNext[1]) - maxPointDistance);
-							}
-							if (pointNext[1] > yLimit) {
-								pointNext[1] = yLimit;
-							}
-							ds_list_set(points, i+1, pointNext);
-						}
-					}*/
-					//scr_minigame_minig_point_checks(points);
 				
 					canMove = false;
 					alarm[1] = 0.20*room_speed;
